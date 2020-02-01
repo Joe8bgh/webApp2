@@ -62,6 +62,7 @@ WildRydes.map = WildRydes.map || {};
   function myFunction(test) {
     var test = id1.value
     document.getElementById("id1").innerHTML = test;
+    requestUnicorn(test);
   }
 
 
