@@ -43,20 +43,19 @@ WildRydes.map = WildRydes.map || {};
     displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
   }
 
-  // Register click handler for #request button
-  $(function onDocReady() {
-    $('#request').click(handleRequestClick);
-    WildRydes.authToken.then(function updateAuthMessage(token) {
-      if (token) {
-        displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
-        $('.authToken').text(token);
+  function handleRequestClick(event) {
+      event.preventDefault();
+      requestUnicorn();
+      WildRydes.authToken.then(function updateAuthMessage(token) {
+        if (token) {
+          displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
+          $('.authToken').text(token);
+        }
+      });
+      if (!_config.api.invokeUrl) {
+        $('#noApiMessage').show();
       }
-    });
-
-    if (!_config.api.invokeUrl) {
-      $('#noApiMessage').show();
-    }
-  });
+  }
 
 
   function displayUpdate(text) {
