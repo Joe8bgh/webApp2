@@ -44,7 +44,6 @@ WildRydes.map = WildRydes.map || {};
         animateArrival(function animateCallback() {
             displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
             WildRydes.map.unsetLocation();
-            $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
         });
     }
