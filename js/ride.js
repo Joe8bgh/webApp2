@@ -16,14 +16,13 @@ WildRydes.map = WildRydes.map || {};
     window.location.href = '/signin.html';
   });
 
-  function requestUnicorn(test) {
+  function requestUnicorn() {
     $.ajax({
       method: 'POST',
       url: _config.api.invokeUrl + '/ride',
       headers: {
         Authorization: authToken
       },
-      data: test,
       contentType: 'application/json',
       success: completeRequest,
       error: function ajaxError(jqXHR, textStatus, errorThrown) {
@@ -46,7 +45,7 @@ WildRydes.map = WildRydes.map || {};
 
   // Register click handler for #request button
   $(function onDocReady() {
-
+    $('#request').click(handleRequestClick);
     WildRydes.authToken.then(function updateAuthMessage(token) {
       if (token) {
         displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
@@ -58,11 +57,6 @@ WildRydes.map = WildRydes.map || {};
       $('#noApiMessage').show();
     }
   });
-
-  function myFunction(test) {
-    var test = id1.value
-    requestUnicorn(test);
-  }
 
 
   function displayUpdate(text) {
