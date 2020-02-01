@@ -22,8 +22,10 @@
 
   <div class="info panel panel-default">
     <div class="panel-heading">
-      <button id="request" class="btn btn-primary">Request Unicorn</button>
-      <button id="auth" class="btn btn-primary">Auth Token</button>
+      <p><br>Enter a number and click OK:<br></p>
+      <input id="id1" type="text">
+      <button id="request" class="btn btn-primary" onclick="myFunction(test)" >Request Unicorn</button>
+      <button id="auth" class="btn btn-primary" onclick="onDocReady()" >Auth Token</button>
       <div class="dropdown pull-right">
         <button id="accountLink" class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Account <span class="caret"></span>
@@ -39,18 +41,10 @@
       </ol>
     </div>
 
-
-
-
     <p>Enter a number and click OK:</p>
-
-    <input id="id1" type="word">
-    <button onclick="myFunction()">OK</button>
-
-    <p id="demo"></p>
-
-
-
+    <input id="id1" type="text">
+    <button onclick="myFunction()"  >OK</button>
+    <p id="id1"></p>
 
   </div>
 

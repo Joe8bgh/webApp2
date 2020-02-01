@@ -61,7 +61,7 @@ WildRydes.map = WildRydes.map || {};
 
   function myFunction(test) {
     var test = id1.value
-    document.getElementById("demo").innerHTML = test;
+    document.getElementById("id1").innerHTML = test;
   }
 
 
