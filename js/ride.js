@@ -41,11 +41,8 @@ WildRydes.map = WildRydes.map || {};
         unicorn = result.Unicorn;
         pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.');
-        animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
-            WildRydes.map.unsetLocation();
-            $('#request').text('Set Pickup');
-        });
+        displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
+        $('#request').text('Set Pickup 2');
     }
 
     // Register click handler for #request button
@@ -76,11 +73,6 @@ WildRydes.map = WildRydes.map || {};
         requestUnicorn();
     }
 
-    function animateArrival(callback) {
-        var dest = WildRydes.map.selectedPoint;
-
-        WildRydes.map.animate(origin, dest, callback);
-    }
 
     function displayUpdate(text) {
         $('#updates').append($('<li>' + text + '</li>'));
